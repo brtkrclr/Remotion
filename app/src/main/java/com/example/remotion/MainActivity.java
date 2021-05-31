@@ -9,14 +9,17 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        
+
         Button learnButton=findViewById(R.id.learnButton);
-        Button playButton=findViewById(R.id.learnButton);
-        Button settingsButton=findViewById(R.id.learnButton);
+        Button playButton=findViewById(R.id.playButton);
+        Button settingsButton=findViewById(R.id.settingsButton);
 
         learnButton.setOnClickListener(v -> {
             Intent intent=new Intent(this,LearnActivity.class);
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         settingsButton.setOnClickListener(v -> {
-            Intent intent=new Intent(this,SettingsActivity.class);
+            Intent intent=new Intent(this,startPage.class);
             startActivity(intent);
         });
     }
