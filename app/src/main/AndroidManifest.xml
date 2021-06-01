@@ -9,11 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Remotion">
-        <activity android:name=".startPage"></activity>
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".PlayActivity" />
-        <activity android:name=".LearnActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".HomePage"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LearnActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,5 +32,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
