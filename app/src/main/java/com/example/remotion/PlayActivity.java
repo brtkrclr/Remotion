@@ -3,8 +3,10 @@ package com.example.remotion;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
@@ -70,6 +72,12 @@ public class PlayActivity extends AppCompatActivity {
                 }
                 SystemClock.sleep(1000);
                 if(QuestionNum==mQuestions.getLength()-1){
+
+                    Intent intent_result = new Intent(PlayActivity.this, ResultActivity.class);
+                    intent_result.putExtra("totalQuestions",mQuestions.getLength());
+                    intent_result.putExtra("finalScore",mScore);
+                    startActivity(intent_result);
+
                     QuestionNum=0;
                     mQuizNum=0;
                     mScore=0;
@@ -77,6 +85,18 @@ public class PlayActivity extends AppCompatActivity {
                     QuestionNum++;
                     mQuizNum++;
                 }
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateQuestion();
+                    }
+                }, 1000);{
+
+                }
+
+
                 updateQuestion();
             }
         });
@@ -103,7 +123,7 @@ public class PlayActivity extends AppCompatActivity {
             showRadioButtonAnswer(QuestionNum);
         }
         showMainImage();
-       // ScrollView sv = findViewById(R.id.scrollView);
+        // ScrollView sv = findViewById(R.id.scrollView);
         //sv.smoothScrollTo(0,0);
 
 
